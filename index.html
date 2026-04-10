@@ -35,8 +35,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
+    
+    <!-- Smooth Scroll & Animation Libraries -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -44,6 +50,9 @@
     <div class="background-container">
         <div class="header-bg"></div>
         <div class="overlay"></div>
+        <div class="watercolor-splatter splatter-1"></div>
+        <div class="watercolor-splatter splatter-2"></div>
+        <div class="watercolor-splatter splatter-3"></div>
     </div>
     <nav class="site-nav">
         <div class="nav-inner">
@@ -56,14 +65,14 @@
     </nav>
 
     <main class="content-wrapper">
-        <section class="hero slide-up">
-            <img class="hero-bg-img" src="Images/Hero_section_BG-edited.png" alt="Wedding invitation background">
-            <div class="hero-content">
-                <span class="eyebrow">You are invited to the wedding of</span>
+        <section class="index-hero">
+            <div class="hero-content fade-in">
+                <span class="eyebrow eyebrow-hero">You are invited to the wedding of</span>
                 <h1 class="names">Abhinath <span class="ampersand">&amp;</span> Theshika</h1>
                 <p class="date-hero">December 5th &amp; 6th, 2026</p>
                 <p class="venue-hero">Le Meridien, Kochi, Kerala</p>
-                <div class="hero-actions">
+
+                <div class="hero-actions" style="margin-top: 2.5rem;">
                     <a href="rsvp.html" class="btn primary-btn">RSVP Now</a>
                     <a href="events.html" class="btn secondary-btn">View Events</a>
                 </div>

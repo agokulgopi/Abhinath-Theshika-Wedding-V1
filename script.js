@@ -1,35 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Reveal animations on scroll
-    const revealElements = document.querySelectorAll('.fade-in');
-
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 100;
-
-        revealElements.forEach(el => {
-            const revealTop = el.getBoundingClientRect().top;
-            if (revealTop < windowHeight - revealPoint) {
-                el.classList.add('visible');
-            }
-        });
-    };
-
-    // Initial check
-    revealOnScroll();
-
-    // Throttle scroll event for better performance
-    let isScrolling = false;
-    window.addEventListener('scroll', () => {
-        if (!isScrolling) {
-            window.requestAnimationFrame(() => {
-                revealOnScroll();
-                isScrolling = false;
-            });
-            isScrolling = true;
-        }
+    // 1. Initialize Lenis for Smooth Scrolling
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    // Home memory carousel interactions
+    // 2. GSAP ScrollTrigger Setup
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Sync Lenis with GSAP
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+
+    // Hero Cinematic (Removed per user request)
+
+    // 4. Reveal Animations for Other Sections
+    gsap.utils.toArray('.fade-in').forEach(section => {
+        gsap.fromTo(section, 
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                }
+            }
+        );
+    });
+
+    // 5. Home Memory Carousel logic (Restored)
     const memoryCurrentImage = document.getElementById('memoryCurrentImage');
     const memoryPrevBtn = document.getElementById('memoryPrevBtn');
     const memoryNextBtn = document.getElementById('memoryNextBtn');
@@ -66,25 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
             memoryModalImage.src = memoryCurrentImage.src;
             memoryModalImage.alt = memoryCurrentImage.alt;
             memoryModal.classList.add('show');
-            memoryModal.setAttribute('aria-hidden', 'false');
         });
 
         const closeMemoryModal = () => {
             memoryModal.classList.remove('show');
-            memoryModal.setAttribute('aria-hidden', 'true');
-            memoryModalImage.src = '';
         };
 
         memoryModalClose.addEventListener('click', closeMemoryModal);
         memoryModal.addEventListener('click', (e) => {
             if (e.target === memoryModal) closeMemoryModal();
         });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && memoryModal.classList.contains('show')) closeMemoryModal();
-        });
     }
 
-    // Countdown timer
+    // 6. Countdown Timer (Restored)
     const daysEl = document.getElementById('countDays');
     const hoursEl = document.getElementById('countHours');
     const minsEl = document.getElementById('countMins');
