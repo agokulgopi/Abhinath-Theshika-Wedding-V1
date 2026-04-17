@@ -408,6 +408,22 @@ h3,
     margin-top: 8px !important;
 }
 
+.attire-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 15px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .attire-img {
+        max-width: 100%;
+    }
+}
+
 /* Gallery Section */
 /* Gallery Section */
 .gallery-section {

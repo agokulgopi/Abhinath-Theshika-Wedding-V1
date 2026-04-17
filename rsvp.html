@@ -176,40 +176,58 @@
             <form id="rsvp-form" method="POST" novalidate>
                 
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <!-- Update name="entry.XXXXXX" to match your Google Form -->
-                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                    <label for="fullName">Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Name">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    <label for="contactNumber">Contact Number</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" required placeholder="Contact Number">
                 </div>
 
                 <div class="form-group">
-                    <label for="attending">Will you be attending?</label>
+                    <label for="whatsappNumber">WhatsApp Number</label>
+                    <input type="tel" id="whatsappNumber" name="whatsappNumber" required placeholder="WhatsApp Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Mail ID</label>
+                    <input type="email" id="email" name="email" required placeholder="Mail ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="attending">Will you be attending</label>
                     <select id="attending" name="attending" required>
                         <option value="" disabled selected>Select an option</option>
-                        <option value="Joyfully Accepts">Joyfully Accepts</option>
-                        <option value="Regretfully Declines">Regretfully Declines</option>
+                        <option value="Sangeet">Sangeet</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Sangeet + Wedding">Sangeet + Wedding</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Which events will you attend?</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="eventsSangeet" value="Sangeet"> Sangeet (Saturday, 5 Dec)
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="eventsWedding" value="Wedding"> Wedding (Sunday, 6 Dec)
-                        </label>
-                    </div>
+                    <label for="accompanying">Are people accompanying you</label>
+                    <select id="accompanying" name="accompanying" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="others">others</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="dietary">Dietary Restrictions or Special Requirements (Optional)</label>
-                    <textarea id="dietary" name="dietary" rows="3" placeholder="e.g. Vegetarian, Nut Allergy..."></textarea>
+                    <label>Would you be requiring a stay at the property</label>
+                    <div class="radio-group" style="display: flex; gap: 20px; margin-top: 10px;">
+                        <label class="radio-label" style="font-weight: 400; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="stay" value="Yes" required onchange="document.getElementById('stayMessage').style.display='block';"> Yes
+                        </label>
+                        <label class="radio-label" style="font-weight: 400; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="stay" value="No" required onchange="document.getElementById('stayMessage').style.display='none';"> No
+                        </label>
+                    </div>
+                    <p id="stayMessage" class="color-note" style="margin-top: 10px; font-size: 0.85rem; display: none;">If yes, it is available at a discounted price (please contact Le Meridien directly at <a href="tel:+917594822422">+91 75948 22422</a>)</p>
                 </div>
 
                 <button type="submit" class="btn form-submit-btn">Send RSVP</button>
@@ -221,7 +239,8 @@
             </div>
 
             <p class="subtitle" style="margin-top: 1.25rem; margin-bottom: 0;">
-                For RSVP and guest support, contact Story Arc: <a href="tel:+919876543210">+91 98765 43210</a>
+                For any RSVP support, contact:<br>
+                <strong>RSVP Contact: <a href="tel:+917358347422">+91 73583 47422</a></strong>
             </p>
             <a href="index.html" class="back-link">← Go back to invitation</a>
             </div>
@@ -233,7 +252,7 @@
             <img src="https://thestoryarc.in/wp-content/uploads/2025/10/Story-Arc-Logo-01-6-2.png" alt="Story Arc wedding planners logo" class="planner-logo">
             <div class="footer-text">
                 <p>Need any help before or during the wedding? Please reach out to our wedding planners, Story Arc.</p>
-                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                <p>RSVP Contact: <a href="tel:+917358347422">+91 73583 47422</a></p>
             </div>
         </div>
     </footer>
