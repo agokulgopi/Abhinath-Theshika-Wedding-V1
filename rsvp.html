@@ -196,12 +196,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="attending">Will you be attending</label>
-                    <select id="attending" name="attending" required>
+                    <label>Will you be attending the celebrations?</label>
+                    <div class="radio-group" style="display: flex; gap: 20px; margin-top: 10px;">
+                        <label class="radio-label" style="font-weight: 400; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="attending" value="Yes" required> Yes
+                        </label>
+                        <label class="radio-label" style="font-weight: 400; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="attending" value="No" required> No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventsChoice">We’d love to know which celebrations you’ll be joining us for:</label>
+                    <select id="eventsChoice" name="eventsChoice">
                         <option value="" disabled selected>Select an option</option>
                         <option value="Sangeet">Sangeet</option>
                         <option value="Wedding">Wedding</option>
-                        <option value="Sangeet + Wedding">Sangeet + Wedding</option>
+                        <option value="Both events">Both events</option>
+                        <option value="Regretfully unable to attend both">Regretfully unable to attend both</option>
                     </select>
                 </div>
 

@@ -34,7 +34,7 @@ function doPost(e) {
     const p = e.parameter || {};
 
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Timestamp', 'Name', 'Contact Number', 'WhatsApp Number', 'Mail ID', 'Attending', 'Accompanying', 'Stay Req']);
+      sheet.appendRow(['Timestamp', 'Name', 'Contact Number', 'WhatsApp Number', 'Mail ID', 'Attending', 'Events Choice', 'Accompanying', 'Stay Req']);
     }
 
     sheet.appendRow([
@@ -44,6 +44,7 @@ function doPost(e) {
       p.whatsappNumber || '',
       p.email          || '',
       p.attending      || '',
+      p.eventsChoice   || '',
       p.accompanying   || '',
       p.stay           || ''
     ]);
@@ -84,8 +85,9 @@ const RSVP_CONFIG = {
     whatsappNumber: "entry.3333333333",
     email: "entry.4444444444",
     attending: "entry.5555555555",
-    accompanying: "entry.6666666666",
-    stay: "entry.7777777777"
+    eventsChoice: "entry.6666666666",
+    accompanying: "entry.7777777777",
+    stay: "entry.8888888888"
   }
 };
 
@@ -124,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       whatsappNumber: (formData.get("whatsappNumber") || "").toString().trim(),
       email: (formData.get("email") || "").toString().trim(),
       attending: (formData.get("attending") || "").toString(),
+      eventsChoice: (formData.get("eventsChoice") || "").toString(),
       accompanying: (formData.get("accompanying") || "").toString(),
       stay: (formData.get("stay") || "").toString()
     };
@@ -137,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         appScriptData.append("whatsappNumber", payload.whatsappNumber);
         appScriptData.append("email", payload.email);
         appScriptData.append("attending", payload.attending);
+        appScriptData.append("eventsChoice", payload.eventsChoice);
         appScriptData.append("accompanying", payload.accompanying);
         appScriptData.append("stay", payload.stay);
 
@@ -153,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         googleFormData.append(RSVP_CONFIG.fieldMap.whatsappNumber, payload.whatsappNumber);
         googleFormData.append(RSVP_CONFIG.fieldMap.email, payload.email);
         googleFormData.append(RSVP_CONFIG.fieldMap.attending, payload.attending);
+        googleFormData.append(RSVP_CONFIG.fieldMap.eventsChoice, payload.eventsChoice);
         googleFormData.append(RSVP_CONFIG.fieldMap.accompanying, payload.accompanying);
         googleFormData.append(RSVP_CONFIG.fieldMap.stay, payload.stay);
 
