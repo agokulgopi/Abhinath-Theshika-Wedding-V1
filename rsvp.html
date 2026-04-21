@@ -191,8 +191,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Mail ID</label>
-                    <input type="email" id="email" name="email" required placeholder="Mail ID">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required placeholder="Email address">
                 </div>
 
                 <div class="form-group">
@@ -211,23 +211,16 @@
                     <label for="eventsChoice">We’d love to know which celebrations you’ll be joining us for:</label>
                     <select id="eventsChoice" name="eventsChoice">
                         <option value="" disabled selected>Select an option</option>
-                        <option value="Sangeet">Sangeet</option>
-                        <option value="Wedding">Wedding</option>
+                        <option value="Sangeet - 5 December">Sangeet - 5 December</option>
+                        <option value="Wedding - 6 December">Wedding - 6 December</option>
                         <option value="Both events">Both events</option>
                         <option value="Regretfully unable to attend both">Regretfully unable to attend both</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="accompanying">Are people accompanying you</label>
-                    <select id="accompanying" name="accompanying" required>
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="No">No</option>
-                    </select>
+                    <label for="accompanying">Names of Guests in your Party</label>
+                    <textarea id="accompanying" name="accompanying" rows="3" placeholder="Please list the names of anyone joining you (or type 'None')"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -240,7 +233,7 @@
                             <input type="radio" name="stay" value="No" required onchange="document.getElementById('stayMessage').style.display='none';"> No
                         </label>
                     </div>
-                    <p id="stayMessage" class="color-note" style="margin-top: 10px; font-size: 0.85rem; display: none;">If yes, it is available at a discounted price (please contact Le Meridien directly at <a href="tel:+917594822422">+91 75948 22422</a>)</p>
+                    <p id="stayMessage" class="color-note" style="margin-top: 10px; font-size: 0.85rem; display: none;">If yes, it is available at a discounted price at Le Meridien. You can call directly at <a href="tel:+917594822422">+91 75948 22422</a>, or <a href="https://app.marriott.com/reslink?id=1773132649495&key=GRP&app=resvlink" target="_blank" rel="noopener noreferrer">book your special rate online here</a>.</p>
                 </div>
 
                 <button type="submit" class="btn form-submit-btn">Send RSVP</button>
