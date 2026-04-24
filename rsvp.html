@@ -77,10 +77,13 @@
             cursor: pointer;
         }
 
-        .checkbox-label input {
-            width: auto;
-            margin-right: 10px;
+        .checkbox-label input,
+        .radio-label input[type="radio"] {
+            width: auto !important;
+            margin: 0;
+            padding: 0;
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .button-group {
