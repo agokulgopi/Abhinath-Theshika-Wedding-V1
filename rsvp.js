@@ -78,7 +78,7 @@ MODE B: googleForm
 
 const RSVP_CONFIG = {
   mode: "appsScript", // "appsScript" or "googleForm"
-  endpoint: "https://script.google.com/macros/s/AKfycbzKVZ8SyYq17zf5FtLS3VuCKcwwt_IHXUKx_2tkFFg8lqtJtJCyQH-JiMbqQuYSTNvh9g/exec",
+  endpoint: "https://script.google.com/macros/s/AKfycbzG6aP-Ocb2duRHYYjdqB8-FfSFEmaj3HdsPR1KdhTxjxXBC1umf1s-KR-sYoNdv0IrgA/exec",
   fieldMap: {
     fullName: "entry.1111111111",
     contactNumber: "entry.2222222222",
